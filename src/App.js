@@ -9,7 +9,8 @@ class App extends Component {
     weatherInfo: {}
   };
   componentDidMount() {
-      axios.get('http://api.openweathermap.org/data/2.5/weather?q=voorhees&appid=223e03a760ffca273e3cb7835e79689c')
+      const city = 'voorhees';
+      axios.get('https://nipsx96cfe.execute-api.us-east-2.amazonaws.com/default/weatherservcice?city='+ city)
       .then(res => {
           this.setState({weatherInfo: res.data});
           console.log(res.data);
